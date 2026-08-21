@@ -1,0 +1,235 @@
+{
+  "meta": {
+    "siteName": "Madar",
+    "titleTemplate": "%s · Madar",
+    "defaultTitle": "Madar — Where Food Trade Moves",
+    "defaultDescription": "Madar is the neutral trust and verification layer connecting food manufacturers and wholesale suppliers with retailers, restaurants and hotels across Saudi Arabia and the Gulf."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "forSuppliers": "For Suppliers",
+    "forBuyers": "For Buyers",
+    "contact": "Contact",
+    "cta": "Register Interest",
+    "toggleMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "languageSwitch": "العربية"
+  },
+  "footer": {
+    "tagline": "Where food trade moves",
+    "columns": {
+      "platform": "Platform",
+      "company": "Company",
+      "contact": "Contact"
+    },
+    "hq": "Riyadh, Saudi Arabia",
+    "rights": "© {year} Madar. All rights reserved.",
+    "legalNote": "Madar is a neutral trust and verification layer — not a party to any sale."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "The trusted digital channel for food wholesale trade",
+      "title": "Where food trade",
+      "titleHighlight": "moves",
+      "subtitle": "A neutral trust and verification layer connecting food manufacturers and wholesale suppliers with retailers, restaurants and hotels — every supplier verified, every order backed by data, every partnership built to last.",
+      "ctaPrimary": "Register your interest",
+      "ctaSecondary": "How Madar works",
+      "trustBadges": ["SFDA-verified suppliers", "Compliant e-invoicing", "Your data stays yours"]
+    },
+    "flow": {
+      "manufacturer": "Manufacturer",
+      "madar": "Madar",
+      "buyer": "Buyer",
+      "madarSub": "Verify · Trust · Data"
+    },
+    "howItWorks": {
+      "eyebrow": "How Madar works",
+      "title": "From the production line to the buyer's shelf, in one trusted step",
+      "subtitle": "Madar connects both sides of the trade through a single verification layer — no informal middlemen, no guesswork.",
+      "supplierLabel": "For manufacturers & suppliers",
+      "buyerLabel": "For buyers",
+      "supplierSteps": [
+        { "title": "Get verified", "desc": "Submit your commercial registration and certifications — including SFDA food-safety approval — for a one-time verification." },
+        { "title": "List products", "desc": "Publish your catalog with wholesale pricing per buyer segment, via bulk import or manual entry." },
+        { "title": "Receive orders", "desc": "Accept and fulfill directly, with full visibility into every order and invoice." }
+      ],
+      "buyerSteps": [
+        { "title": "Register", "desc": "Create a verified buyer account in minutes." },
+        { "title": "Browse & quote", "desc": "Explore verified manufacturers and compare freely." },
+        { "title": "Order & automate", "desc": "Set automatic reordering so stock never runs out." }
+      ]
+    },
+    "neutrality": {
+      "eyebrow": "The Neutrality Charter",
+      "title": "Neutrality isn't a slogan — it's a written commitment",
+      "subtitle": "Madar is a trust and verification layer, not a competing merchant to our suppliers. These are our explicit commitments.",
+      "items": [
+        { "title": "We don't sell our own products", "desc": "Madar is a trust and verification layer only — never a merchant competing with our suppliers." },
+        { "title": "Your customer list stays yours", "desc": "We don't take your customers — we give you the tools to bring them in and keep them." },
+        { "title": "Your customers see your price first", "desc": "Neutrality doesn't mean exposing you to a blind price war." },
+        { "title": "We don't share your data with competitors", "desc": "No other supplier ever sees your customers or your private pricing." },
+        { "title": "A transparent revenue model", "desc": "A clear, published commission — no hidden fees, no paid ranking that works against you." }
+      ]
+    },
+    "audience": {
+      "eyebrow": "For every side of the trade",
+      "title": "Choose your path",
+      "supplierTab": "I'm a supplier",
+      "buyerTab": "I'm a buyer",
+      "supplier": {
+        "headline": "Grow your customer base without losing control of the relationship",
+        "bullets": [
+          "A private storefront under your own link, plus visibility in the open market",
+          "Per-customer pricing, credit limits, and performance reporting",
+          "One-time verification, then a trust badge every deal can see",
+          "Compliant e-invoicing, with no extra paperwork"
+        ],
+        "cta": "Register as a supplier"
+      },
+      "buyer": {
+        "headline": "Compare, order, and automate reordering — from one trusted source",
+        "bullets": [
+          "Every verified supplier in one comparable marketplace",
+          "Smart inventory alerts before stock runs out, not after",
+          "One multi-supplier cart, with a clear invoice per order",
+          "Ordering is also available over WhatsApp as a parallel channel"
+        ],
+        "cta": "Register as a buyer"
+      }
+    },
+    "vision": {
+      "eyebrow": "Vision",
+      "title": "From Riyadh, to the Kingdom, to the Gulf",
+      "subtitle": "To become the trusted infrastructure that powers every food transaction between manufacturer and buyer across the region.",
+      "stages": [
+        { "code": "01", "place": "Riyadh", "desc": "Founding focus — building a network of verified suppliers and buyers.", "status": "Current phase" },
+        { "code": "02", "place": "Saudi Arabia", "desc": "Expansion into major cities and trade hubs.", "status": "Next phase" },
+        { "code": "03", "place": "The Gulf", "desc": "A unified infrastructure for the Gulf food supply chain.", "status": "Long-term vision" }
+      ]
+    },
+    "stats": {
+      "eyebrow": "Founding-phase goals",
+      "title": "We build in the open — these are our measurable targets",
+      "items": [
+        { "value": 100, "suffix": "%", "label": "Suppliers verified before their first listing" },
+        { "value": 90, "suffix": " days", "label": "Target commission waiver for founding suppliers" },
+        { "value": 3, "suffix": "", "label": "Core buyer segments: retail, restaurants, hotels" },
+        { "value": 2, "suffix": "s", "label": "Target platform response time" }
+      ],
+      "note": "Target figures for the founding Riyadh launch phase — reviewed and replaced with live figures as they land."
+    },
+    "finalCta": {
+      "eyebrow": "Join the network",
+      "title": "Join the network shaping the future of food trade",
+      "subtitle": "Leave your details and our team will reach out within a few business days.",
+      "form": {
+        "name": "Full name",
+        "company": "Company name",
+        "segment": "Segment",
+        "segmentPlaceholder": "Choose...",
+        "segmentSupplier": "Manufacturer / Supplier",
+        "segmentBuyer": "Retailer / Restaurant / Hotel",
+        "phone": "Mobile number",
+        "submit": "Submit",
+        "submitting": "Submitting...",
+        "successTitle": "Received",
+        "successDesc": "Thank you — the Madar team will be in touch soon.",
+        "privacyNote": "By submitting this form, you agree that the Madar team may contact you about your request."
+      }
+    }
+  },
+  "about": {
+    "hero": { "eyebrow": "About us", "title": "The trust layer food trade has been missing", "subtitle": "Madar isn't another online store — it's the layer the deal, the document, and the data move through, across the Gulf food supply chain." },
+    "story": {
+      "title": "Why Madar",
+      "body": "For decades, Saudi Arabia's food wholesale trade has run on personal relationships and phone calls, with no shared record of pricing or terms. Buyers have no reliable way to confirm a supplier's licensing or food-safety record before ordering, and neither side has the order or performance data needed to plan with confidence. Madar was founded in Riyadh to replace these fragmented channels with a single, transparent, and reliable platform."
+    },
+    "mission": { "title": "Mission", "body": "To connect verified manufacturers with the Kingdom's leading buyers through a single marketplace that removes uncertainty from wholesale trade — replacing informal deals with verified partners, manual guesswork with real-time data, and scattered relationships with one dependable channel." },
+    "vision": { "title": "Vision", "body": "To become the trusted infrastructure that powers every food transaction between manufacturer and buyer across Saudi Arabia and the wider region." },
+    "whyNow": {
+      "title": "Why now",
+      "body": "The Gulf food supply chain is expanding fast, while its trade channels still lack real digitization or a shared trust layer. Madar is building that layer from day one — for verification, not just for growth."
+    },
+    "principles": {
+      "title": "What governs our decisions",
+      "items": [
+        { "title": "A real marketplace, not single-vendor software", "desc": "The buyer is always free to compare and choose." },
+        { "title": "The supplier is a sovereign partner, not a data source", "desc": "We don't take their customer list — we give them tools to bring it themselves." },
+        { "title": "Trust is the first product", "desc": "No product is listed before the supplier is verified." },
+        { "title": "Arabic first", "desc": "The interface and correspondence are formal Arabic, with professional English." }
+      ]
+    }
+  },
+  "services": {
+    "hero": { "eyebrow": "Services", "title": "A complete system for trustworthy wholesale trade", "subtitle": "From verification to delivery, Madar builds every service as an independent module — added without breaking what came before." },
+    "items": [
+      {
+        "badge": "Available today",
+        "title": "Verification & trust",
+        "desc": "Every supplier passes verification covering commercial registration, food-safety certification (SFDA), and production capacity, before any of their products appear in the market. Ratings at the item and batch level — not just the supplier — reflect real accuracy and delivery reliability.",
+        "points": ["Mandatory commercial and food-safety verification", "Trust badges: verified, accredited, founding partner", "An audit trail for every sensitive transaction"]
+      },
+      {
+        "badge": "Available today",
+        "title": "Unified marketplace & automated ordering",
+        "desc": "One platform brings together manufacturers, supermarkets, warehouses and hotels into a single point of discovery, negotiation and ordering — with smart inventory alerts and automatic reordering that prevents stockouts before they happen.",
+        "points": ["Compare by price, delivery time and rating", "One multi-supplier cart", "Stockout alerts and automatic reordering"]
+      },
+      {
+        "badge": "Future-phase vision",
+        "title": "Supply chain financing & invoice factoring",
+        "desc": "The architecture is pre-built for B2B — not consumer — trade financing, to be shipped as an independent module once legal and regulatory review is complete and a licensed financing partner is connected. This is a vision for a future phase, not a current commitment.",
+        "points": ["Credit limits and repayment history as an architectural foundation", "Subject to prior legal and regulatory review", "Launched through a licensed financing partner"]
+      }
+    ]
+  },
+  "forSuppliers": {
+    "hero": { "eyebrow": "For manufacturers & suppliers", "title": "Grow your sales without giving up your customer relationships", "subtitle": "Madar gives you a private storefront, an open market of new buyers, and a verification badge that opens doors — without losing control." },
+    "valueprops": [
+      { "title": "Your own store + the open market", "desc": "A private storefront link for your existing customers, plus visibility in the open market when buyers search for what you sell." },
+      { "title": "Your prices stay your call", "desc": "A public price, private per-customer pricing, volume pricing and limited-time offers — you decide." },
+      { "title": "One-time verification", "desc": "Submit your commercial registration and food-safety certification once, and carry a permanent trust badge." },
+      { "title": "Your data is yours", "desc": "We never share your customers or private pricing with any other supplier on the platform, under any circumstance." }
+    ],
+    "steps": { "title": "How to start", "items": [
+      { "title": "Get verified", "desc": "Your commercial registration and certifications — a one-time verification." },
+      { "title": "List products", "desc": "Bulk import your catalog or add it manually." },
+      { "title": "Receive orders", "desc": "Full visibility into every order and invoice, from day one." }
+    ]},
+    "formTitle": "Register your interest as a supplier"
+  },
+  "forBuyers": {
+    "hero": { "eyebrow": "For retailers, restaurants & hotels", "title": "One verified wholesale source that doesn't let you down at peak demand", "subtitle": "Compare verified suppliers, order from several in one cart, and automate reordering before stock ever runs out." },
+    "valueprops": [
+      { "title": "Real comparison", "desc": "Every verified supplier selling what you need, under one standardized product ID for accurate comparison." },
+      { "title": "One multi-supplier cart", "desc": "Order from more than one supplier in a single session, with a clear invoice per sub-order." },
+      { "title": "Alerts before the stockout, not after", "desc": "Live visibility into stock levels, with a reorder suggestion before it's too late." },
+      { "title": "A channel you already know", "desc": "Ordering is also available over WhatsApp as a core parallel channel — no complex tech to learn." }
+    ],
+    "steps": { "title": "How to start", "items": [
+      { "title": "Register", "desc": "Create a verified buyer account in minutes." },
+      { "title": "Browse & quote", "desc": "Explore verified manufacturers and request quotes." },
+      { "title": "Order & automate", "desc": "Turn on automatic reordering for fast-moving items." }
+    ]},
+    "formTitle": "Register your interest as a buyer"
+  },
+  "contact": {
+    "hero": { "eyebrow": "Contact us", "title": "Let's talk", "subtitle": "Whether you're a supplier, a buyer, or a potential partner, our Riyadh team is ready to talk." },
+    "info": { "hqTitle": "Headquarters", "hq": "Riyadh, Saudi Arabia", "emailTitle": "Email", "phoneTitle": "Phone" },
+    "formTitle": "Send a message",
+    "form": { "name": "Full name", "email": "Email address", "company": "Company name (optional)", "message": "Your message", "submit": "Send message" }
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "This path doesn't exist on Madar",
+    "subtitle": "The link may be outdated or incorrect. Head back home to continue.",
+    "cta": "Back to home"
+  },
+  "common": {
+    "readMore": "Read more",
+    "learnMore": "Learn more",
+    "fieldRequired": "This field is required"
+  }
+}
