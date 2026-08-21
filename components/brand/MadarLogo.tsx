@@ -1,9 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 /**
  * The Madar wordmark + "smile" — reproduced exactly from the brand system

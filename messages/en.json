@@ -5,6 +5,38 @@
     "defaultTitle": "Madar — Where Food Trade Moves",
     "defaultDescription": "Madar is the neutral trust and verification layer connecting food manufacturers and wholesale suppliers with retailers, restaurants and hotels across Saudi Arabia and the Gulf."
   },
+  "journey": {
+    "sectionLabel": "The order's journey through the orbit",
+    "fallbackTitle": "From the moment of order to delivery",
+    "fallbackSubtitle": "Five stages every order passes through inside Madar — from the first spark to the completed orbit.",
+    "stages": {
+      "0": {
+        "eyebrow": "01 · The Spark of Demand",
+        "title": "The spark of an order",
+        "desc": "It starts with a single request from a verified buyer — a digital moment that instantly becomes a live data stream entering Madar's network."
+      },
+      "1": {
+        "eyebrow": "02 · The Core of Madar",
+        "title": "The matching & verification core",
+        "desc": "The order passes through Madar's core: instant matching to the right supplier, pricing and stock verified, with no manual intervention."
+      },
+      "2": {
+        "eyebrow": "03 · The Smart Node",
+        "title": "Prepared at the source",
+        "desc": "At the verified supplier, the shipment comes together and is packed with precision — every item logged and tracked from the first moment."
+      },
+      "3": {
+        "eyebrow": "04 · Fleet in Motion",
+        "title": "On the road",
+        "desc": "The shipment moves through the transport network, with live visibility into the order's location from departure to arrival."
+      },
+      "4": {
+        "eyebrow": "05 · The Orbit Completes",
+        "title": "Delivered — the orbit completes",
+        "desc": "The order reaches the buyer, and the invoice closes electronically — the circle of trust completes, ready to begin again with the next order."
+      }
+    }
+  },
   "nav": {
     "home": "Home",
     "about": "About",

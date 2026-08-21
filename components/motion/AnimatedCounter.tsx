@@ -1,7 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { useInView, useMotionValue, useReducedMotion, animate } from "framer-motion";
+import { useInView, useMotionValue, animate } from "framer-motion";
+
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 interface AnimatedCounterProps {
   value: number;
@@ -10,7 +12,14 @@ interface AnimatedCounterProps {
   duration?: number;
 }
 
-/** Counts up from 0 to `value` once it scrolls into view. */
+/**
+ * Counts up from 0 to `value` once it scrolls into view — or jumps straight
+ * there in one frame under reduced motion. Both paths go through the same
+ * animate()-in-an-effect pipeline (duration 0 vs. duration N) so the
+ * rendered value is always `display` state seeded at 0 on both server and
+ * client: nothing here depends on a client-only value during the first
+ * render, so there's nothing for hydration to mismatch on.
+ */
 export function AnimatedCounter({
   value,
   suffix = "",
@@ -24,11 +33,9 @@ export function AnimatedCounter({
   const [display, setDisplay] = React.useState(0);
 
   React.useEffect(() => {
-    // Reduced motion skips the animation entirely — nothing to synchronize,
-    // so it's handled in the render below instead of here.
-    if (!isInView || reduceMotion) return;
+    if (!isInView) return;
     const controls = animate(motionValue, value, {
-      duration,
+      duration: reduceMotion ? 0 : duration,
       ease: [0.16, 1, 0.3, 1],
       onUpdate: (latest) => setDisplay(Math.round(latest)),
     });
@@ -37,7 +44,7 @@ export function AnimatedCounter({
 
   return (
     <span ref={ref} className={className}>
-      {reduceMotion ? value : display}
+      {display}
       {suffix}
     </span>
   );
