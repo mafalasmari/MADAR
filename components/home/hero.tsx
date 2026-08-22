@@ -2,21 +2,18 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { ShieldCheck } from "lucide-react";
 
-import { Link } from "@/i18n/navigation";
 import { MadarLogo } from "@/components/brand/MadarLogo";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
-import { SupplyChainBackground } from "@/components/home/supply-chain-background";
+import { HeroOrbitBackground } from "@/components/home/hero-orbit-background";
 
 export function Hero() {
   const t = useTranslations("home.hero");
-  const badges = t.raw("trustBadges") as string[];
 
   return (
     <section className="relative overflow-hidden bg-madar-navy">
-      <SupplyChainBackground />
+      <HeroOrbitBackground />
       <div
         className="pointer-events-none absolute inset-0"
         style={{
@@ -72,29 +69,12 @@ export function Hero() {
             className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Button asChild variant="cta" size="lg">
-              <Link href="/contact">{t("ctaPrimary")}</Link>
+              <a href="#founding">{t("ctaPrimary")}</a>
             </Button>
             <Button asChild variant="outlineOnNavy" size="lg">
-              <a href="#how-it-works">{t("ctaSecondary")}</a>
+              <a href="#journey">{t("ctaSecondary")}</a>
             </Button>
           </motion.div>
-
-          <motion.ul
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.9 }}
-            className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3"
-          >
-            {badges.map((badge) => (
-              <li
-                key={badge}
-                className="flex items-center gap-2 text-sm font-medium text-madar-on-navy-muted"
-              >
-                <ShieldCheck className="size-4 text-madar-amber" />
-                {badge}
-              </li>
-            ))}
-          </motion.ul>
         </div>
       </Container>
     </section>

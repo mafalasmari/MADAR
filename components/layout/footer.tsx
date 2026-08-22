@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import { Mail, MapPin, Phone } from "lucide-react";
 
+import { LinkedinIcon, TwitterIcon, InstagramIcon } from "@/components/layout/social-icons";
+
 import { Link } from "@/i18n/navigation";
 import { MadarLogo } from "@/components/brand/MadarLogo";
 import { Container } from "@/components/ui/container";
@@ -21,6 +23,13 @@ export function Footer() {
     { href: "/contact", label: tNav("contact") },
   ] as const;
 
+  // Placeholders — swap for the real handles before launch.
+  const socialLinks = [
+    { href: "#", label: t("social.linkedin"), icon: LinkedinIcon },
+    { href: "#", label: t("social.twitter"), icon: TwitterIcon },
+    { href: "#", label: t("social.instagram"), icon: InstagramIcon },
+  ] as const;
+
   return (
     <footer className="border-t border-madar-navy-line bg-madar-navy text-white">
       <Container className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4">
@@ -31,6 +40,18 @@ export function Footer() {
           <p className="mt-4 max-w-xs text-sm text-madar-on-navy-muted">
             {t("tagline")}
           </p>
+          <div className="mt-5 flex items-center gap-3">
+            {socialLinks.map(({ href, label, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                className="grid size-9 place-items-center rounded-full border border-white/15 text-white/85 transition-colors hover:border-madar-amber hover:text-madar-amber"
+              >
+                <Icon className="size-4" />
+              </a>
+            ))}
+          </div>
         </div>
 
         <div>

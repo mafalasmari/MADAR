@@ -154,4 +154,46 @@
       animation: none;
     }
   }
+
+  /* Orbit motif reused across the hero background and the problem/solution
+     "chaos → order" transition: a slowly rotating ring plus drifting
+     particle dots, all pure CSS so they never compete with the 3D journey's
+     frame budget. */
+  .madar-orbit-spin {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: madar-orbit-spin 60s linear infinite;
+  }
+  .madar-orbit-spin-reverse {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: madar-orbit-spin 44s linear infinite reverse;
+  }
+  .madar-particle-drift {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: madar-particle-drift 6s ease-in-out infinite;
+  }
+  @keyframes madar-orbit-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes madar-particle-drift {
+    0%, 100% {
+      opacity: 0.35;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 0.9;
+      transform: translateY(-8px);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .madar-orbit-spin,
+    .madar-orbit-spin-reverse,
+    .madar-particle-drift {
+      animation: none;
+    }
+  }
 }
