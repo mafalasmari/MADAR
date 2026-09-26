@@ -236,6 +236,20 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 }
 
 /* ==========================================================================
+   3. Trust line
+   ========================================================================== */
+.trust{padding-top:56px}
+.trust-panel{background:var(--mist);border-radius:var(--r-lg);padding:48px 40px;text-align:center}
+.trust-panel p{margin-inline:auto;max-width:960px;color:var(--slate);font-size:18px;line-height:30px;font-weight:400}
+:lang(ar) .trust-panel p{font-size:18px;line-height:32px}
+@media (max-width:720px){
+  .trust{padding-top:40px}
+  .trust-panel{padding:40px 24px}
+  .trust-panel p{font-size:16px;line-height:26px}
+  :lang(ar) .trust-panel p{font-size:17px;line-height:28px}
+}
+
+/* ==========================================================================
    Device mockup (reusable)
    ========================================================================== */
 .device{
@@ -302,8 +316,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .product .sup{display:flex;align-items:center;gap:3px;font-size:9.5px;color:var(--slate);margin-top:1px}
 .product .sup svg{width:10px;height:10px;color:var(--orbit);flex:none}
 .product .row{display:flex;align-items:center;justify-content:space-between;margin-top:6px}
-.product .price{font-family:var(--font-latin);font-weight:600;font-size:11.5px;direction:ltr}
-.product .price small{font-weight:400;color:var(--slate);font-size:9px}
+.price-bar{display:block;width:40px;height:6px;border-radius:var(--r-pill);background:var(--slate)}
 .product .add{width:24px;height:24px;border-radius:var(--r-md);background:var(--navy);color:#fff;display:grid;place-items:center}
 .product .add svg{width:12px;height:12px}
 .tabbar{
@@ -404,7 +417,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <ul class="checks">
           <li class="reveal" style="--i:3"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3 4.7-4.9"/></svg></span><span data-i18n="heroB1">موردون معتمدون بعد التحقق الكامل</span></li>
           <li class="reveal" style="--i:4"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3 4.7-4.9"/></svg></span><span data-i18n="heroB2">دفع آجل مرن حتى 45 يوماً</span></li>
-          <li class="reveal" style="--i:5"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3 4.7-4.9"/></svg></span><span data-i18n="heroB3">مستشعر مخزون ذكي يمنع النفاد</span></li>
+          <li class="reveal" style="--i:5"><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3 4.7-4.9"/></svg></span><span data-i18n="heroB3">مستشعر مخزون ذكي يتنبأ بالنفاد</span></li>
         </ul>
 
         <div class="hero-ctas reveal" style="--i:6">
@@ -479,13 +492,13 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
                       <div class="ph"><svg viewBox="0 0 40 60"><rect x="15" y="2" width="10" height="7" rx="2" fill="#0A2A45"/><path d="M13 9h14l3 8v38a3 3 0 0 1-3 3H13a3 3 0 0 1-3-3V17z" fill="#5AA2D8" opacity=".35"/><rect x="10" y="26" width="20" height="16" fill="#fff"/><rect x="13" y="30" width="14" height="2.5" rx="1" fill="#3972B4"/><rect x="13" y="35" width="9" height="2" rx="1" fill="#DCE2EA"/></svg></div>
                       <div class="name" data-i18n="mP1">زيت دوار الشمس</div>
                       <div class="sup"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M6 .8l1.4 1 1.7-.1.5 1.6 1.4 1-.6 1.7.6 1.6-1.4 1-.5 1.7-1.7-.1L6 11.2l-1.4-1-1.7.1-.5-1.6-1.4-1 .6-1.7-.6-1.6 1.4-1 .5-1.7 1.7.1z"/><path d="m4 6.1 1.3 1.3L8 4.7" stroke="#fff" stroke-width="1.1" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="mS1">مصنع معتمد</span></div>
-                      <div class="row"><span class="price">48.50 <small>SAR</small></span><span class="add"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></div>
+                      <div class="row"><span class="price-bar"></span><span class="add"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></div>
                     </div>
                     <div class="product">
                       <div class="ph"><svg viewBox="0 0 44 60"><path d="M8 10c0-3 6-5 14-5s14 2 14 5l3 42a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z" fill="#DCE2EA"/><path d="M9 10c4 2 22 2 26 0" stroke="#0A2A45" stroke-width="1.5" fill="none"/><rect x="12" y="26" width="20" height="16" rx="2" fill="#fff"/><rect x="15" y="30" width="14" height="2.5" rx="1" fill="#0A2A45"/><rect x="15" y="35" width="9" height="2" rx="1" fill="#5AA2D8"/></svg></div>
                       <div class="name" data-i18n="mP2">أرز بسمتي فاخر</div>
                       <div class="sup"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M6 .8l1.4 1 1.7-.1.5 1.6 1.4 1-.6 1.7.6 1.6-1.4 1-.5 1.7-1.7-.1L6 11.2l-1.4-1-1.7.1-.5-1.6-1.4-1 .6-1.7-.6-1.6 1.4-1 .5-1.7 1.7.1z"/><path d="m4 6.1 1.3 1.3L8 4.7" stroke="#fff" stroke-width="1.1" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="mS2">مصنع معتمد</span></div>
-                      <div class="row"><span class="price">112.00 <small>SAR</small></span><span class="add"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></div>
+                      <div class="row"><span class="price-bar"></span><span class="add"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 2v8M2 6h8"/></svg></span></div>
                     </div>
                   </div>
                 </div>
@@ -503,6 +516,15 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 3. TRUST LINE ======================= -->
+<section class="trust" aria-label="شبكة الشركاء" data-i18n-aria="trustAria">
+  <div class="container">
+    <div class="trust-panel reveal">
+      <p data-i18n="trustLine">نبني شبكة شركاء موثوقة من المصانع المعتمدة ومنصات التشغيل والجهات التمويلية</p>
     </div>
   </div>
 </section>
@@ -529,7 +551,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       heroEyebrow:'البنية التحتية لسلسلة الإمداد الغذائي',
       heroTitle:'حيث تدور تجارة الغذاء',
       heroLead:'منصة B2B تربط المصانع الغذائية المعتمدة مباشرة بالسوبرماركت والمطاعم والمتاجر في السعودية.',
-      heroB1:'موردون معتمدون بعد التحقق الكامل',heroB2:'دفع آجل مرن حتى 45 يوماً',heroB3:'مستشعر مخزون ذكي يمنع النفاد',
+      heroB1:'موردون معتمدون بعد التحقق الكامل',heroB2:'دفع آجل مرن حتى 45 يوماً',heroB3:'مستشعر مخزون ذكي يتنبأ بالنفاد',
       chipRestaurant:'اطلب لمطعمك',chipStore:'اطلب لمتجرك',
       deviceHomeAria:'واجهة تطبيق مدار: الصفحة الرئيسية مع البحث والأقسام والمنتجات',
       mDeliverTo:'التوصيل إلى:',mDeliverPlace:'الفرع الرئيسي، الرياض',mSearch:'ابحث عن منتج أو مورد',
@@ -537,6 +559,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       mCat1:'ألبان',mCat2:'زيوت',mCat3:'حبوب',mCat4:'مشروبات',mSuggested:'منتجات مقترحة',mSeeAll:'عرض الكل',
       mP1:'زيت دوار الشمس',mP2:'أرز بسمتي فاخر',mS1:'مصنع معتمد',mS2:'مصنع معتمد',
       mTabHome:'الرئيسية',mTabCats:'الأقسام',mTabStock:'المخزون',mTabCart:'السلة',mTabAccount:'حسابي',
+      trustAria:'شبكة الشركاء',trustLine:'نبني شبكة شركاء موثوقة من المصانع المعتمدة ومنصات التشغيل والجهات التمويلية',
       todo:'الأقسام التالية قيد البناء.'
     },
     en:{
@@ -549,7 +572,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       heroEyebrow:'Food supply chain infrastructure',
       heroTitle:'Where food trade revolves',
       heroLead:'A B2B platform connecting certified food manufacturers directly with supermarkets, restaurants and retailers across Saudi Arabia.',
-      heroB1:'Suppliers admitted after full verification',heroB2:'Flexible deferred payment up to 45 days',heroB3:'A smart inventory sensor that prevents stock-outs',
+      heroB1:'Suppliers admitted after full verification',heroB2:'Flexible deferred payment up to 45 days',heroB3:'A smart inventory sensor that anticipates stock-outs',
       chipRestaurant:'Order for your restaurant',chipStore:'Order for your store',
       deviceHomeAria:'MADAR app: home screen with search, categories and products',
       mDeliverTo:'Deliver to:',mDeliverPlace:'Main branch, Riyadh',mSearch:'Search products or suppliers',
@@ -557,6 +580,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       mCat1:'Dairy',mCat2:'Oils',mCat3:'Grains',mCat4:'Beverages',mSuggested:'Suggested for you',mSeeAll:'See all',
       mP1:'Sunflower oil',mP2:'Premium basmati rice',mS1:'Certified factory',mS2:'Certified factory',
       mTabHome:'Home',mTabCats:'Categories',mTabStock:'Inventory',mTabCart:'Cart',mTabAccount:'Account',
+      trustAria:'Partner network',trustLine:'We are building a trusted partner network of certified manufacturers, operations platforms and financing institutions.',
       todo:'The remaining sections are in progress.'
     }
   };
