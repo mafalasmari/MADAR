@@ -630,6 +630,43 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 @media (max-width:560px){.fp-panel{margin-inline:calc(var(--gutter) * -1 + 8px)}}
 
 /* ==========================================================================
+   10. Vision
+   ========================================================================== */
+.vision-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.vision-card:nth-child(2){--shine-delay:-1.75s}
+.vision-card:nth-child(3){--shine-delay:-3.5s}
+.vision-card:nth-child(4){--shine-delay:-5.25s}
+.vision-card p{max-width:460px}
+@media (max-width:1000px){.vision-grid{grid-template-columns:1fr;max-width:560px;margin-inline:auto;gap:16px}}
+
+/* ==========================================================================
+   11. FAQ — native <details>, animated with grid-template-rows
+   ========================================================================== */
+.faq{padding-top:0}
+.faq-list{max-width:840px;margin-inline:auto;border-top:1px solid var(--hairline)}
+.faq-item{border-bottom:1px solid var(--hairline)}
+.faq-item summary{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:24px 4px;cursor:pointer;list-style:none;
+  color:var(--navy);font-size:18px;line-height:28px;font-weight:600;
+}
+:lang(ar) .faq-item summary{font-size:19px;line-height:30px;font-weight:700}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--orbit)}
+.faq-icon{
+  flex:none;width:32px;height:32px;border-radius:50%;background:var(--mist);color:var(--navy);
+  display:grid;place-items:center;transition:transform .3s var(--ease),background-color .3s var(--ease),color .3s var(--ease);
+}
+.faq-icon svg{width:14px;height:14px}
+.faq-item.is-open .faq-icon{transform:rotate(45deg);background:var(--navy);color:#fff}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s var(--ease)}
+.faq-a > div{overflow:hidden}
+.faq-a p{padding:0 4px 24px;max-width:720px;color:var(--slate)}
+.faq-item.is-open .faq-a{grid-template-rows:1fr}
+.no-js .faq-item[open] .faq-a{grid-template-rows:1fr}
+@media (max-width:560px){.faq-item summary{padding:20px 0;font-size:16px;line-height:26px}:lang(ar) .faq-item summary{font-size:17px;line-height:28px}.faq-a p{padding:0 0 20px}}
+
+/* ==========================================================================
    Device mockup (reusable)
    ========================================================================== */
 .device{
@@ -1319,7 +1356,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <article class="fp-card reveal" style="--i:0">
         <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20V10l5 3V10l5 3V10l5 3V5h3v15z"/><path d="M7 17h2M12 17h2"/></svg></span>
         <h3 data-i18n="fp1T">انضم كمورد مؤسس</h3>
-        <ul class="checks fp-checks"><li><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3 4.7-4.9"/></svg></span><span data-i18n="fp1B1">فترة سماح 90 يوماً على العمولة</span></li><li><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3 4.7-4.9"/></svg></span><span data-i18n="fp1B2">عمولة مخفضة، تنخفض أكثر مع كل عميل تجلبه</span></li><li><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3 4.7-4.9"/></svg></span><span data-i18n="fp1B3">أولوية في الظهور ودعم مخصص</span></li></ul>
+        <ul class="checks fp-checks"><li><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3 4.7-4.9"/></svg></span><span data-i18n="fp1B1">فترة سماح 90 يوماً على العمولة</span></li><li><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3 4.7-4.9"/></svg></span><span data-i18n="fp1B2">عمولة مخفضة، تنخفض تدريجياً مع العملاء الذين تجلبهم</span></li><li><span class="check" aria-hidden="true"><svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3 4.7-4.9"/></svg></span><span data-i18n="fp1B3">أولوية في الظهور ودعم مخصص</span></li></ul>
         <a class="btn btn--primary fp-cta" href="#contact" data-partner-type="supplier" data-i18n="fp1Cta">سجّل كمورد مؤسس</a>
       </article>
       <article class="fp-card reveal" style="--i:1">
@@ -1329,7 +1366,87 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
         <a class="btn btn--primary fp-cta" href="#contact" data-partner-type="buyer" data-i18n="fp2Cta">سجّل كمشترٍ مؤسس</a>
       </article>
       </div>
-      <p class="fp-note reveal" data-i18n="fpNote">الفوج الأول محدود. الأولوية لمن يسجّل أولاً.</p>
+      <p class="fp-note reveal" data-i18n="fpNote">يُفتح التسجيل للفوج الأول على مراحل، وتُراجع الطلبات بالترتيب.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 10. VISION ======================= -->
+<section class="section vision" id="about" aria-labelledby="vis-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 id="vis-title" data-i18n="visT">رؤيتنا</h2>
+      <p data-i18n="visS">نبني البنية التحتية الرقمية لسلسلة الإمداد الغذائي في السعودية والخليج</p>
+    </header>
+    <div class="vision-grid">
+      <article class="info-card vision-card reveal" style="--i:0">
+        <svg class="shine" aria-hidden="true" focusable="false"><rect x="0" y="0" width="100%" height="100%" rx="12" ry="12" pathLength="100"/></svg>
+        <span class="icon-tile"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="14" r="3"/><ellipse cx="14" cy="14" rx="11" ry="5"/><ellipse cx="14" cy="14" rx="11" ry="5" transform="rotate(60 14 14)"/><ellipse cx="14" cy="14" rx="11" ry="5" transform="rotate(-60 14 14)"/></svg></span>
+        <h3 data-i18n="vis1T">بنية تحتية، لا تطبيق</h3>
+        <p data-i18n="vis1D">نبني الطبقة الرقمية الموثوقة التي تربط المصانع بالمشترين في السعودية والخليج.</p>
+      </article>
+      <article class="info-card vision-card reveal" style="--i:1">
+        <svg class="shine" aria-hidden="true" focusable="false"><rect x="0" y="0" width="100%" height="100%" rx="12" ry="12" pathLength="100"/></svg>
+        <span class="icon-tile"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5 5.5 7v6c0 5.6 3.6 10 8.5 11.5 4.9-1.5 8.5-5.9 8.5-11.5V7z"/><path d="m10 14 3 3 5.5-6"/></svg></span>
+        <h3 data-i18n="vis2T">الثقة قبل كل شيء</h3>
+        <p data-i18n="vis2D">لا يدخل مورد غير موثق. كل مورد يخضع للتحقق من السجل التجاري وشهادات الغذاء والدواء.</p>
+      </article>
+      <article class="info-card vision-card reveal" style="--i:2">
+        <svg class="shine" aria-hidden="true" focusable="false"><rect x="0" y="0" width="100%" height="100%" rx="12" ry="12" pathLength="100"/></svg>
+        <span class="icon-tile"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8.5h17a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5V7A1.5 1.5 0 0 1 6 5.5h13"/><path d="M23.5 13h-4.5a2 2 0 0 0 0 4h4.5"/><circle cx="19.2" cy="15" r=".6" fill="currentColor"/></svg></span>
+        <h3 data-i18n="vis3T">تمويل مدمج بلا تعقيد</h3>
+        <p data-i18n="vis3D">ضامن يرفع القوة الشرائية للمشتري، ويتيح للمورّد تحصيلاً فورياً عبر شراكة مع جهة تمويل مرخصة.</p>
+      </article>
+      <article class="info-card vision-card reveal" style="--i:3">
+        <svg class="shine" aria-hidden="true" focusable="false"><rect x="0" y="0" width="100%" height="100%" rx="12" ry="12" pathLength="100"/></svg>
+        <span class="icon-tile"><svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 24.5s7.5-6.6 7.5-12.3a7.5 7.5 0 0 0-15 0c0 5.7 7.5 12.3 7.5 12.3z"/><circle cx="14" cy="12" r="2.8"/></svg></span>
+        <h3 data-i18n="vis4T">الرياض أولاً، ثم الخليج</h3>
+        <p data-i18n="vis4D">نبدأ من الرياض، ثم نتوسع لجدة والدمام، ثم الخليج.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 11. FAQ ======================= -->
+<section class="section faq" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <header class="section-head reveal">
+      <h2 id="faq-title" data-i18n="faqT">اكتشف المزيد عن مدار</h2>
+      <p data-i18n="faqS">الأسئلة الشائعة</p>
+    </header>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary><span data-i18n="faq1Q">كيف يخدمني مدار؟</span><span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></summary>
+        <div class="faq-a"><div><p data-i18n="faq1A">مدار يربطك مباشرة بمصانع وموردين معتمدين، ويوفر لك شراء الجملة والتمويل المرن وإدارة المخزون في منصة واحدة.</p></div></div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-i18n="faq2Q">من نخدم؟</span><span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></summary>
+        <div class="faq-a"><div><p data-i18n="faq2A">المصانع والموزعون، والسوبرماركت والبقالات، والمطاعم والمقاهي، والفنادق، والمنشآت الصغيرة والمتوسطة.</p></div></div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-i18n="faq3Q">كيف يعمل ضامن؟</span><span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></summary>
+        <div class="faq-a"><div><p data-i18n="faq3A">يُدفع للمورّد فوراً عند تأكيد الطلب، وتُسدّد أنت خلال 45 يوماً، عبر شراكة مع جهة تمويل مرخصة.</p></div></div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-i18n="faq4Q">ما المدن التي يخدمها مدار؟</span><span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></summary>
+        <div class="faq-a"><div><p data-i18n="faq4A">نبدأ من الرياض، ونتوسع تدريجياً لجدة والدمام حسب حاجة السوق.</p></div></div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-i18n="faq5Q">كيف يتم التحقق من الموردين؟</span><span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></summary>
+        <div class="faq-a"><div><p data-i18n="faq5A">كل مورّد يخضع للتحقق من السجل التجاري، وشهادة هيئة الغذاء والدواء، وشهادات الجودة. لا يدخل مورد غير موثق.</p></div></div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-i18n="faq6Q">هل الأسعار شاملة الضريبة؟</span><span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></summary>
+        <div class="faq-a"><div><p data-i18n="faq6A">نعم، جميع الأسعار المعروضة شاملة ضريبة القيمة المضافة.</p></div></div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-i18n="faq7Q">هل هناك رسوم تسجيل؟</span><span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></summary>
+        <div class="faq-a"><div><p data-i18n="faq7A">التسجيل متاح للمشترين والموردين بعد مراجعة الطلب. تُعلن تفاصيل العمولة للموردين بوضوح قبل الانضمام.</p></div></div>
+      </details>
+      <details class="faq-item">
+        <summary><span data-i18n="faq8Q">هل يمكنني التصفح قبل التسجيل؟</span><span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 3v10M3 8h10"/></svg></span></summary>
+        <div class="faq-a"><div><p data-i18n="faq8A">نعم، يمكنك استكشاف المنصة ومعاينة الكتالوج قبل التسجيل.</p></div></div>
+      </details>
     </div>
   </div>
 </section>
@@ -1395,9 +1512,23 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       solListsTitle:'قوائمي',solListWeekly:'الاحتياجات الأسبوعية',solListKitchen:'المطبخ',solListStore:'المستودع',solAvail:'متوفر',solLimited:'توفر محدود',solOrderList:'اطلب القائمة',
       solToast:'تغيّر سعر منتج في قائمتك',solCompareTitle:'مقارنة الأسعار',solSuppliers:'الموردون المعتمدون',solSuitable:'الأقل سعراً',solAddCart:'أضف إلى السلة',
       fpT:'الشركاء المؤسسون',fpS:'انضم إلى الفوج الأول من المصانع والمشترين الذين سيصنعون قصة مدار',
-      fp1T:'انضم كمورد مؤسس',fp1B1:'فترة سماح 90 يوماً على العمولة',fp1B2:'عمولة مخفضة، تنخفض أكثر مع كل عميل تجلبه',fp1B3:'أولوية في الظهور ودعم مخصص',fp1Cta:'سجّل كمورد مؤسس',
+      fp1T:'انضم كمورد مؤسس',fp1B1:'فترة سماح 90 يوماً على العمولة',fp1B2:'عمولة مخفضة، تنخفض تدريجياً مع العملاء الذين تجلبهم',fp1B3:'أولوية في الظهور ودعم مخصص',fp1Cta:'سجّل كمورد مؤسس',
       fp2T:'انضم كمشترٍ مؤسس',fp2B1:'دفع آجل مرن حتى 45 يوماً عبر ضامن',fp2B2:'أسعار لحظية من موردين معتمدين',fp2B3:'مستشعر مخزون ذكي يستبق النفاد',fp2Cta:'سجّل كمشترٍ مؤسس',
-      fpNote:'الفوج الأول محدود. الأولوية لمن يسجّل أولاً.',
+      fpNote:'يُفتح التسجيل للفوج الأول على مراحل، وتُراجع الطلبات بالترتيب.',
+      visT:'رؤيتنا',visS:'نبني البنية التحتية الرقمية لسلسلة الإمداد الغذائي في السعودية والخليج',
+      vis1T:'بنية تحتية، لا تطبيق',vis1D:'نبني الطبقة الرقمية الموثوقة التي تربط المصانع بالمشترين في السعودية والخليج.',
+      vis2T:'الثقة قبل كل شيء',vis2D:'لا يدخل مورد غير موثق. كل مورد يخضع للتحقق من السجل التجاري وشهادات الغذاء والدواء.',
+      vis3T:'تمويل مدمج بلا تعقيد',vis3D:'ضامن يرفع القوة الشرائية للمشتري، ويتيح للمورّد تحصيلاً فورياً عبر شراكة مع جهة تمويل مرخصة.',
+      vis4T:'الرياض أولاً، ثم الخليج',vis4D:'نبدأ من الرياض، ثم نتوسع لجدة والدمام، ثم الخليج.',
+      faqT:'اكتشف المزيد عن مدار',faqS:'الأسئلة الشائعة',
+      faq1Q:'كيف يخدمني مدار؟',faq1A:'مدار يربطك مباشرة بمصانع وموردين معتمدين، ويوفر لك شراء الجملة والتمويل المرن وإدارة المخزون في منصة واحدة.',
+      faq2Q:'من نخدم؟',faq2A:'المصانع والموزعون، والسوبرماركت والبقالات، والمطاعم والمقاهي، والفنادق، والمنشآت الصغيرة والمتوسطة.',
+      faq3Q:'كيف يعمل ضامن؟',faq3A:'يُدفع للمورّد فوراً عند تأكيد الطلب، وتُسدّد أنت خلال 45 يوماً، عبر شراكة مع جهة تمويل مرخصة.',
+      faq4Q:'ما المدن التي يخدمها مدار؟',faq4A:'نبدأ من الرياض، ونتوسع تدريجياً لجدة والدمام حسب حاجة السوق.',
+      faq5Q:'كيف يتم التحقق من الموردين؟',faq5A:'كل مورّد يخضع للتحقق من السجل التجاري، وشهادة هيئة الغذاء والدواء، وشهادات الجودة. لا يدخل مورد غير موثق.',
+      faq6Q:'هل الأسعار شاملة الضريبة؟',faq6A:'نعم، جميع الأسعار المعروضة شاملة ضريبة القيمة المضافة.',
+      faq7Q:'هل هناك رسوم تسجيل؟',faq7A:'التسجيل متاح للمشترين والموردين بعد مراجعة الطلب. تُعلن تفاصيل العمولة للموردين بوضوح قبل الانضمام.',
+      faq8Q:'هل يمكنني التصفح قبل التسجيل؟',faq8A:'نعم، يمكنك استكشاف المنصة ومعاينة الكتالوج قبل التسجيل.',
       todo:'الأقسام التالية قيد البناء.'
     },
     en:{
@@ -1449,9 +1580,23 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       solListsTitle:'My lists',solListWeekly:'Weekly needs',solListKitchen:'Kitchen',solListStore:'Warehouse',solAvail:'In stock',solLimited:'Limited',solOrderList:'Order this list',
       solToast:'A price on your list has changed',solCompareTitle:'Compare prices',solSuppliers:'Certified suppliers',solSuitable:'Lowest price',solAddCart:'Add to cart',
       fpT:'Founding partners',fpS:'Join the first cohort of manufacturers and buyers who will shape the MADAR story',
-      fp1T:'Join as a founding supplier',fp1B1:'A 90-day grace period on commission',fp1B2:'A reduced commission that falls further with every client you refer',fp1B3:'Priority visibility and dedicated support',fp1Cta:'Register as a founding supplier',
+      fp1T:'Join as a founding supplier',fp1B1:'A 90-day grace period on commission',fp1B2:'A reduced commission that decreases gradually with the clients you refer',fp1B3:'Priority visibility and dedicated support',fp1Cta:'Register as a founding supplier',
       fp2T:'Join as a founding buyer',fp2B1:'Flexible deferred payment up to 45 days through Dhamen',fp2B2:'Live prices from certified suppliers',fp2B3:'A smart inventory sensor that anticipates stock-outs',fp2Cta:'Register as a founding buyer',
-      fpNote:'The first cohort is limited. Priority follows the order of registration.',
+      fpNote:'Registration for the first cohort opens in stages, and applications are reviewed in order.',
+      visT:'Our vision',visS:'Building the digital infrastructure of the food supply chain in Saudi Arabia and the Gulf',
+      vis1T:'Infrastructure, not an app',vis1D:'We are building the trusted digital layer that connects manufacturers with buyers across Saudi Arabia and the Gulf.',
+      vis2T:'Trust comes first',vis2D:'No unverified supplier is admitted. Every supplier is checked against their commercial registration and food and drug certificates.',
+      vis3T:'Embedded financing, without complexity',vis3D:'Dhamen extends the buyer\'s purchasing power and enables immediate collection for the supplier, through a partnership with a licensed financing institution.',
+      vis4T:'Riyadh first, then the Gulf',vis4D:'We begin in Riyadh, then expand to Jeddah and Dammam, and then across the Gulf.',
+      faqT:'Learn more about MADAR',faqS:'Frequently asked questions',
+      faq1Q:'How does MADAR serve me?',faq1A:'MADAR connects you directly with certified manufacturers and suppliers, bringing wholesale purchasing, flexible financing and inventory management into one platform.',
+      faq2Q:'Who do we serve?',faq2A:'Manufacturers and distributors, supermarkets and grocers, restaurants and cafés, hotels, and small and medium enterprises.',
+      faq3Q:'How does Dhamen work?',faq3A:'The supplier is paid upfront when the order is confirmed, and you settle within 45 days, through a partnership with a licensed financing institution.',
+      faq4Q:'Which cities does MADAR serve?',faq4A:'We begin in Riyadh and expand gradually to Jeddah and Dammam as the market requires.',
+      faq5Q:'How are suppliers verified?',faq5A:'Every supplier is checked against their commercial registration, their Food and Drug Authority certificate and their quality certificates. No unverified supplier is admitted.',
+      faq6Q:'Do prices include VAT?',faq6A:'Yes. All prices shown include value-added tax.',
+      faq7Q:'Are there registration fees?',faq7A:'Registration is open to buyers and suppliers after an application review. Commission terms for suppliers are set out clearly before joining.',
+      faq8Q:'Can I browse before registering?',faq8A:'Yes. You can explore the platform and preview the catalogue before registering.',
       todo:'The remaining sections are in progress.'
     }
   };
@@ -1596,6 +1741,28 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
     });
   })();
 
+
+  /* ---------------- FAQ: animated <details> ---------------- */
+  (function(){
+    var reduce=window.matchMedia('(prefers-reduced-motion:reduce)');
+    document.querySelectorAll('.faq-item').forEach(function(d){
+      var s=d.querySelector('summary'), a=d.querySelector('.faq-a');
+      if(d.open) d.classList.add('is-open');
+      s.addEventListener('click',function(e){
+        e.preventDefault();
+        if(!d.open){
+          d.open=true;
+          requestAnimationFrame(function(){requestAnimationFrame(function(){d.classList.add('is-open')})});
+        }else{
+          d.classList.remove('is-open');
+          if(reduce.matches){d.open=false;return}
+          var done=function(ev){if(ev&&ev.target!==a) return; a.removeEventListener('transitionend',done); if(!d.classList.contains('is-open')) d.open=false};
+          a.addEventListener('transitionend',done);
+          setTimeout(function(){done()},450);
+        }
+      });
+    });
+  })();
 
   /* ---------------- Initial language ---------------- */
   var saved=null; try{saved=localStorage.getItem('madar-lang')}catch(e){}
