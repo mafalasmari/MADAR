@@ -3,7 +3,7 @@
   "framework": null,
   "installCommand": "echo 'Static site: nothing to install'",
   "buildCommand": "echo 'Static site: nothing to build'",
-  "outputDirectory": ".",
+  "outputDirectory": "landing",
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
