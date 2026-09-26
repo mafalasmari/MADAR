@@ -4,20 +4,21 @@ A static, bilingual (Arabic RTL / English LTR) landing page for MADAR Supply. No
 
 | File | What it is |
 |---|---|
-| `gomadar-landing.html` | The landing page. One self-contained file: CSS, JS, logo and favicon are inline. |
+| `index.html` | The landing page. One self-contained file: CSS, JS, logo and favicon are inline. |
 | `privacy.html` | Privacy policy, a **draft pending legal review**. |
 | `terms.html` | Terms and conditions, a **draft pending legal review**. |
+| `vercel.json` | Vercel settings: clean URLs (`/privacy`, `/terms`), security headers, and redirects from the old site's `/ar` and `/en` paths. |
 
 The three files link to each other with relative paths, so keep them in the same folder.
 
 ## Open locally
 
-Double-click `gomadar-landing.html`, or serve the folder:
+Double-click `index.html`, or serve the folder:
 
 ```bash
 cd landing
 python3 -m http.server 8000
-# then open http://localhost:8000/gomadar-landing.html
+# then open http://localhost:8000/
 ```
 
 - `?lang=en` or `?lang=ar` in the URL forces a language. Otherwise the visitor's last choice is remembered in their browser.
@@ -25,11 +26,26 @@ python3 -m http.server 8000
 
 ## Deploy
 
-Any static host works. To serve the page at the site root, rename `gomadar-landing.html` to `index.html`, then update the links that point to `gomadar-landing.html` in `privacy.html` and `terms.html`.
+### Vercel (replacing the current site)
+
+The page is set up to be served from the `landing` folder of branch `claude/determined-darwin-8zwq4g`. In the Vercel dashboard, open the existing project, then:
+
+1. **Settings → General → Root Directory:** set it to `landing` and save.
+2. **Settings → General → Build & Development Settings:**
+   - Set *Framework Preset* to **Other**.
+   - Turn on the override for *Build Command* and leave it empty.
+   - Leave *Output Directory* empty. The folder is served as-is.
+3. **Settings → Git → Production Branch:** set it to `claude/determined-darwin-8zwq4g`.
+4. **Deployments:** open the latest deployment of that branch and choose **Redeploy**, or push any commit to the branch. When it finishes, it becomes the production deployment on your domain.
+
+Links to the old site's `/ar/...` pages go to the Arabic landing page, and `/en/...` pages go to the English one (see `vercel.json`).
+
+**To roll back**, go to **Deployments**, open the last deployment of the old site, and choose **Instant Rollback**. For a permanent revert, change Root Directory and Production Branch back to their previous values.
+
+### Other static hosts
 
 - **Netlify:** drag the `landing` folder onto app.netlify.com/drop, or connect the repo with *Base directory* `landing` and no build command.
-- **Vercel:** `vercel deploy landing`, or import the repo with *Root directory* `landing`, framework preset *Other*, and no build command.
-- **Any other host (S3, Cloudflare Pages, nginx):** upload the three HTML files.
+- **Any other host (S3, Cloudflare Pages, nginx):** upload the contents of `landing`. `vercel.json` only applies on Vercel.
 
 Make sure the host serves the page with gzip or brotli (all of the above do by default). That brings the page from ~240 KB down to ~54 KB over the wire.
 
@@ -39,7 +55,7 @@ Until an endpoint is set, the form runs in **demo mode**: nothing is sent, and t
 
 1. Create a free account at <https://formspree.io>. The free tier allows 50 submissions/month.
 2. Create a new form, then copy its endpoint, e.g. `https://formspree.io/f/abcdwxyz`.
-3. In `gomadar-landing.html`, find `<form class="cf" id="contact-form" action=""` and paste the endpoint:
+3. In `index.html`, find `<form class="cf" id="contact-form" action=""` and paste the endpoint:
    ```html
    <form class="cf" id="contact-form" action="https://formspree.io/f/abcdwxyz" method="post" …>
    ```
@@ -56,7 +72,7 @@ Without JavaScript, the form still posts to the endpoint natively, and Formspree
 
 ## Privacy and terms links
 
-- The footer and the consent line under the form link to `privacy.html` and `terms.html`. If you move or rename those pages, update those three links in `gomadar-landing.html`.
+- The footer and the consent line under the form link to `privacy.html` and `terms.html`. If you move or rename those pages, update those three links in `index.html`.
 - `privacy.html` names Formspree as the form processor. If you use a different provider, update the "How we store it" section in both languages.
 - Both pages carry a visible "draft" notice. Remove it once a lawyer has approved the text.
 
