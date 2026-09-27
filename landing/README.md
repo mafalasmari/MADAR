@@ -105,7 +105,7 @@ Without JavaScript, the form still posts to the endpoint natively, and Formspree
 
 **After any copy change in `index.html`**, run `python3 scripts/build-landing.py` and commit the result. Otherwise `/en` and the structured data go stale.
 
-The domain is set in the `SITE` constant at the top of the script (`https://gomadar.sa`). It must match the primary domain in Vercel → Settings → Domains.
+The domain is set in the `SITE` constant at the top of the script (`https://www.gomadar.sa`). It must match the primary domain in Vercel → Settings → Domains.
 
 ## Blog
 

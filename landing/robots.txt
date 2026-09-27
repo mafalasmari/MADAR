@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gomadar.sa/sitemap.xml
+Sitemap: https://www.gomadar.sa/sitemap.xml

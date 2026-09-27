@@ -26,7 +26,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import blog_content  # noqa: E402
 
-SITE = "https://gomadar.sa"  # primary domain (no trailing slash)
+SITE = "https://www.gomadar.sa"  # primary domain, as verified in Search Console (no trailing slash)
 LANDING = Path(__file__).resolve().parent.parent / "landing"
 
 MARK = re.compile(r"<!--SEO:START-->.*?<!--SEO:END-->", re.S)
