@@ -18,7 +18,27 @@
       "permanent": false
     },
     {
-      "source": "/en/:path*",
+      "source": "/en/about",
+      "destination": "/en",
+      "permanent": false
+    },
+    {
+      "source": "/en/services",
+      "destination": "/en",
+      "permanent": false
+    },
+    {
+      "source": "/en/for-suppliers",
+      "destination": "/en",
+      "permanent": false
+    },
+    {
+      "source": "/en/for-buyers",
+      "destination": "/en",
+      "permanent": false
+    },
+    {
+      "source": "/en/contact",
       "destination": "/en",
       "permanent": false
     }

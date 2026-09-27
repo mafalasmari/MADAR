@@ -107,6 +107,18 @@ Without JavaScript, the form still posts to the endpoint natively, and Formspree
 
 The domain is set in the `SITE` constant at the top of the script (`https://gomadar.sa`). It must match the primary domain in Vercel → Settings → Domains.
 
+## Blog
+
+Articles live in `scripts/blog_content.py`, one entry per article with an Arabic and an English version. `python3 scripts/build-landing.py` generates everything from that file:
+
+- **Blog home pages:** `/blog` (Arabic) and `/en/blog` (English).
+- **Article pages:** `/blog/<slug>` and `/en/blog/<slug>`, with BlogPosting and breadcrumb structured data.
+- **Sitemap:** every new page is added automatically.
+
+**To add an article:** add an entry to `ARTICLES` in `scripts/blog_content.py`, run the build, and commit. The three homepage cards show the first three articles.
+
+**To change the homepage cards** (they are static in `index.html`), edit their titles and links there, or ask for them to be regenerated.
+
 ## Editing notes
 
 - Every visible string exists twice: in the HTML (Arabic) and in the `dict` object near the end of the file (`ar` and `en`). Elements carry `data-i18n="key"`, or `data-i18n-aria` for aria-labels. When you change copy, change it in both places.
