@@ -5,8 +5,8 @@ A static, bilingual (Arabic RTL / English LTR) landing page for MADAR Supply. No
 | File | What it is |
 |---|---|
 | `index.html` | The landing page. One self-contained file: CSS, JS, logo and favicon are inline. |
-| `privacy.html` | Privacy policy, a **draft pending legal review**. |
-| `terms.html` | Terms and conditions, a **draft pending legal review**. |
+| `privacy.html` | Privacy policy (Arabic authoritative, English alongside). |
+| `terms.html` | Terms and conditions (Arabic authoritative, English alongside). |
 | `vercel.json` | Vercel settings: clean URLs (`/privacy`, `/terms`), security headers, and redirects from the old site's `/ar` and `/en` paths. |
 
 The three files link to each other with relative paths, so keep them in the same folder.
@@ -74,7 +74,7 @@ Without JavaScript, the form still posts to the endpoint natively, and Formspree
 
 - The footer and the consent line under the form link to `privacy.html` and `terms.html`. If you move or rename those pages, update those three links in `index.html`.
 - `privacy.html` names Formspree as the form processor. If you use a different provider, update the "How we store it" section in both languages.
-- Both pages carry a visible "draft" notice. Remove it once a lawyer has approved the text.
+- Both pages are published without a draft notice; the Arabic version is authoritative.
 
 ## Before public launch
 
