@@ -7,7 +7,7 @@ A static, bilingual (Arabic RTL / English LTR) landing page for MADAR Supply. No
 | `index.html` | The landing page. One self-contained file: CSS, JS, logo and favicon are inline. |
 | `privacy.html` | Privacy policy (Arabic authoritative, English alongside). |
 | `terms.html` | Terms and conditions (Arabic authoritative, English alongside). |
-| `vercel.json` | Vercel settings: clean URLs (`/privacy`, `/terms`), security headers, and redirects from the old site's `/ar` and `/en` paths. |
+| `vercel.json` | Vercel settings: clean URLs via rewrites (`/en`, `/blog`, `/privacy`, `/terms`), security headers, and redirects from the old site's `/ar` and `/en` paths. |
 
 The three files link to each other with relative paths, so keep them in the same folder.
 
