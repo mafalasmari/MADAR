@@ -94,6 +94,19 @@ Without JavaScript, the form still posts to the endpoint natively, and Formspree
 - **MADAR only enables:** «نتيح», «نوفر», «نمكّن». Use the passive voice for anything the financing partner does («يُدفع للمورد»).
 - **«مدار» is always masculine singular.** Write «مقاهٍ» when indefinite and «المقاهي» when definite.
 
+## SEO
+
+`scripts/build-landing.py` (run from the repository root) generates the SEO layer from `index.html`:
+
+- **English at `/en`:** `en.html` is a fully pre-rendered English copy, so search engines index the English text as well as the Arabic.
+- **Head tags:** canonical URL, `hreflang` (ar / en / x-default), Open Graph and Twitter tags using `og-image.png`, and the favicon and app icons.
+- **Structured data (JSON-LD):** Organization, WebSite and FAQPage, in the language of each page.
+- **`sitemap.xml` and `robots.txt`.**
+
+**After any copy change in `index.html`**, run `python3 scripts/build-landing.py` and commit the result. Otherwise `/en` and the structured data go stale.
+
+The domain is set in the `SITE` constant at the top of the script (`https://gomadar.sa`). It must match the primary domain in Vercel → Settings → Domains.
+
 ## Editing notes
 
 - Every visible string exists twice: in the HTML (Arabic) and in the `dict` object near the end of the file (`ar` and `en`). Elements carry `data-i18n="key"`, or `data-i18n-aria` for aria-labels. When you change copy, change it in both places.

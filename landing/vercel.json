@@ -18,13 +18,8 @@
       "permanent": false
     },
     {
-      "source": "/en",
-      "destination": "/?lang=en",
-      "permanent": false
-    },
-    {
       "source": "/en/:path*",
-      "destination": "/?lang=en",
+      "destination": "/en",
       "permanent": false
     }
   ],
